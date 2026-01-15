@@ -1,0 +1,180 @@
+<section class="section section-project-detail">
+  <div class="container project-detail">
+    <header class="project-detail-header">
+      <a routerLink="/proyectos" class="back-link">Volver a proyectos</a>
+      <h1 class="project-detail-title">Sistema de Control de Accesos NFC</h1>
+
+      <div class="project-meta-strip">
+        <span class="project-meta-tag">Club León · Operación en estadio</span>
+        <span class="project-meta-tag">Autor: Ignacio Sánchez</span>
+        <span class="project-meta-tag">Versión: v1.0.0</span>
+      </div>
+
+      <p class="project-detail-subtitle">
+        Plataforma interna para validar accesos mediante tarjetas NFC y registrar eventos en tiempo
+        real. Diseñada para operación rápida en días de partido, con trazabilidad, reglas de
+        permisos por zona y monitoreo para auditoría.
+      </p>
+    </header>
+
+    <div class="project-detail-grid">
+      <div class="project-detail-main">
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Resumen</h2>
+            <p>
+              El sistema de accesos NFC fue construido para acelerar la validación de credenciales
+              en puntos de entrada y zonas restringidas. Al escanear una tarjeta, el operador puede
+              ver información del titular, vigencia, tipo de acceso y estatus, además de registrar
+              el evento para historial y auditoría.
+            </p>
+            <p>
+              La operación se optimiza con validación en tiempo real y reglas por roles o zonas,
+              evitando revisiones manuales y reduciendo errores durante picos de concurrencia.
+            </p>
+          </div>
+        </section>
+
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Impacto del proyecto</h2>
+            <ul>
+              <li>⚡️Validación más rápida en accesos con menor fricción operativa.</li>
+              <li>⚡️Registro auditable por fecha, punto de acceso, operador y tipo de evento.</li>
+              <li>⚡️Reglas de permisos por zona/rol para mejorar control y seguridad.</li>
+              <li>⚡️Menos errores vs. procesos manuales y listas impresas.</li>
+              <li>⚡️Visibilidad del flujo de accesos para operación y supervisión.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Objetivos del proyecto</h2>
+            <ul>
+              <li>🎯Implementar validación segura y eficiente de accesos con NFC.</li>
+              <li>🎯Reducir procesos manuales y evitar duplicidades/errores de control.</li>
+              <li>🎯Tener historial consultable y filtros por fecha, zona, evento y operador.</li>
+              <li>🎯Integrar reglas de permisos y restricciones configurables.</li>
+              <li>🎯Operación fluida bajo alta concurrencia (días de partido).</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <aside class="project-detail-aside">
+        <div class="project-detail-card">
+          <h3>Ficha del proyecto</h3>
+          <dl>
+            <div class="dl-row">
+              <dt>Tipo de solución</dt>
+              <dd>Herramienta interna · Control de accesos NFC</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Rol</dt>
+              <dd>Desarrollador de software · Full-stack</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Contexto</dt>
+              <dd>Validación de credenciales y auditoría de accesos en estadio</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Tecnologías</dt>
+              <dd>Node.js · nfc-pcsc · WebSocket (ws) · Angular · Firebase/Servicios internos</dd>
+            </div>
+          </dl>
+
+          <div class="project-card-tags">
+            <span class="project-card-tag">NFC</span>
+            <span class="project-card-tag">Tiempo real</span>
+            <span class="project-card-tag">Auditoría</span>
+            <span class="project-card-tag">Operación</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="project-two-column-row">
+      <section class="project-block project-block-card project-block-card-accent">
+        <div class="project-block-inner">
+          <h2>Participación en el proyecto</h2>
+          <ul>
+            <li>📍Implementación de lectura NFC y manejo de eventos de escaneo.</li>
+            <li>📍Validación contra reglas internas (vigencias, zonas, permisos y estatus).</li>
+            <li>📍Interfaz para operación: validación, resultado visual y mensajes de error.</li>
+            <li>📍Registro histórico con filtros por fecha, punto de acceso y operador.</li>
+            <li>📍Integración tiempo real con WebSocket para respuesta inmediata.</li>
+            <li>📍Pruebas en campo y ajustes para picos de concurrencia.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-block project-block-card">
+        <div class="project-block-inner">
+          <h2>Módulos principales</h2>
+          <ul>
+            <li><strong>🔸Escaneo y validación:</strong> lectura NFC, búsqueda y veredicto inmediato.</li>
+            <li><strong>🔸Reglas de acceso:</strong> permisos por zona/rol, vigencias y restricciones.</li>
+            <li><strong>🔸Historial:</strong> bitácora de accesos con filtros y consulta rápida.</li>
+            <li><strong>🔸Auditoría:</strong> detalle por evento: quién, dónde, cuándo y resultado.</li>
+            <li><strong>🔸Monitoreo:</strong> visibilidad de flujo y estados para supervisión.</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <!-- GALERÍA (TELÉFONO) -->
+    <section class="project-gallery project-gallery-mobile">
+      <h2>Galería</h2>
+      <p class="gallery-hint">
+        Capturas sugeridas: pantalla de escaneo, resultado de validación, reglas de acceso y
+        bitácora/historial de eventos.
+      </p>
+
+      <div class="gallery-layout-mobile">
+        <!-- “CELULAR” PRINCIPAL -->
+        <div class="phone-frame" aria-hidden="true">
+          <ng-container *ngIf="isVideo(activeImage.src); else phoneImage">
+            <video
+              class="phone-video"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source [src]="activeImage.src" type="video/mp4" />
+            </video>
+          </ng-container>
+
+          <ng-template #phoneImage>
+            <img [src]="activeImage.src" [alt]="activeImage.alt" class="phone-img" />
+          </ng-template>
+        </div>
+
+        <!-- MINIATURAS -->
+        <div class="phone-thumbs">
+          <ng-container *ngFor="let img of galleryImages; let i = index">
+            <button
+              *ngIf="i !== activeIndex"
+              type="button"
+              class="phone-thumb"
+              (click)="setActive(i)"
+              [attr.aria-label]="'Abrir: ' + img.alt"
+            >
+              <ng-container *ngIf="isVideo(img.src); else thumbImage">
+                <div class="phone-thumb-video">
+                  <span class="phone-thumb-badge">VIDEO</span>
+                </div>
+              </ng-container>
+
+              <ng-template #thumbImage>
+                <img [src]="img.src" [alt]="img.alt" />
+              </ng-template>
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

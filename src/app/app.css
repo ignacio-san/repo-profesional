@@ -1,0 +1,256 @@
+:host {
+  display: block;
+  background: #f8f9fa;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #111217;
+}
+
+/* PAGE */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ============== TOPBAR ============== */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.topbar-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: .75rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+}
+
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00b06b, #00975a);
+  box-shadow: 0 4px 10px rgba(0,176,107,.35);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 0.96rem;
+  color: #111217;
+}
+
+.brand-role {
+  font-size: .74rem;
+  color: #6f757a;
+}
+
+/* NAV DESKTOP */
+.nav-links {
+  display: flex;
+  gap: .9rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4a4f57;
+  padding: .35rem .7rem;
+  border-radius: .45rem;
+  transition: .15s ease;
+}
+
+.nav-links a:hover {
+  background: #e6f7ef;
+  color: #00975a;
+}
+
+/* BOTÓN HAMBURGUESA (oculto en desktop) */
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  padding: .3rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.menu-line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #111217;
+  margin: 3px 0;
+}
+
+/* BRAND PEGADO A LA IZQUIERDA EN DESKTOP */
+@media (min-width: 1200px) {
+  .brand {
+    margin-left: -7rem;
+  }
+
+  .nav-links {
+    margin-right: -7rem;
+  }
+}
+
+/* ============== RESPONSIVE HEADER ============== */
+
+@media (max-width: 900px) {
+  .topbar-inner {
+    justify-content: space-between;
+  }
+
+  /* mostrar botón hamburguesa */
+  .menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* nav como panel desplegable */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 1.4rem;
+    margin-right: 0;
+    margin-left: 0;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 16px 40px rgba(15,23,42,0.12);
+    border-radius: .8rem;
+    padding: .5rem 0;
+    display: none;
+    flex-direction: column;
+    min-width: 180px;
+  }
+
+  .nav-links a {
+    padding: .45rem .9rem;
+  }
+
+  .nav-links.nav-open {
+    display: flex;
+  }
+}
+
+/* ============== FOOTER ============== */
+/* FOOTER MÁS ANCHO Y BAJITO */
+.footer {
+  margin-top: 2.2rem;
+  padding: 1rem 0 0.7rem; /* menos alto, sin padding lateral aquí */
+  background: radial-gradient(circle at top left, #e8fff3, #ffffff 65%);
+  border-top: 1px solid #e5e7eb;
+  color: #111217;
+}
+
+/* aquí le damos más ancho y mismo “marco” que el contenido de arriba */
+.footer-container {
+  max-width: 1200px;        /* antes 1120px, ahora ocupa más */
+  margin: 0 auto;
+  padding: 0 1.5rem;        /* mismo padding lateral que usas arriba */
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+
+/* TEXTOS */
+.footer-info h2 {
+  font-size: 1.25rem;
+  margin-bottom: .15rem;
+  color: #0f172a;
+}
+
+.footer-description {
+  font-size: .86rem;
+  color: #4b5563;
+  margin-bottom: .55rem;
+}
+
+/* CONTACTO */
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  margin-bottom: .4rem;
+}
+
+.footer-contact a {
+  text-decoration: none;
+  color: #00b06b;
+  font-weight: 500;
+  font-size: .86rem;
+}
+
+.footer-contact a:hover {
+  color: #00d980;
+}
+
+/* REDES */
+.footer-social h3 {
+  font-size: .9rem;
+  margin-bottom: .45rem;
+  color: #0f172a;
+}
+
+.footer-icons {
+  display: flex;
+  gap: .6rem;
+}
+
+.social-icon svg {
+  transition: .2s ease;
+}
+
+.social-icon:hover svg {
+  fill: #00d980;
+}
+
+/* LÍNEA Y COPYRIGHT */
+.footer-divider {
+  max-width: 1200px;        /* igual que footer-container */
+  margin: 0.9rem auto 0.5rem;
+  border: none;
+  border-top: 1px solid #e2e2e2;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: .78rem;
+  color: #4b5563;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}

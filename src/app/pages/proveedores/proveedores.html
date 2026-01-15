@@ -1,0 +1,264 @@
+<!-- proveedores.component.html -->
+<section class="section section-project-detail">
+  <div class="container project-detail">
+    <header class="project-detail-header">
+      <a routerLink="/proyectos" class="back-link">Volver a proyectos</a>
+      <h1 class="project-detail-title">Portal de Proveedores y Facturas</h1>
+
+      <div class="project-meta-strip">
+        <span class="project-meta-tag">Club León · Portal de proveedores</span>
+        <span class="project-meta-tag">Autor: Ignacio Sánchez</span>
+        <span class="project-meta-tag">Versión: v1.0.0</span>
+      </div>
+
+      <p class="project-detail-subtitle">
+        Plataforma web para que proveedores y administradores gestionen facturas, documentos
+        fiscales y estatus de pago en un solo lugar. Automatiza la validación de CFDI, la
+        solicitud de documentación obligatoria y el control de montos por proveedor.
+      </p>
+    </header>
+
+    <!-- GRID PRINCIPAL -->
+    <div class="project-detail-grid">
+      <!-- COLUMNA PRINCIPAL -->
+      <div class="project-detail-main">
+        <!-- RESUMEN -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Resumen</h2>
+            <p>
+              El portal de proveedores permite a cada proveedor cargar sus facturas en formato PDF
+              y XML, así como la documentación requerida para mantenerlos activos en el padrón:
+              opinión de cumplimiento, constancia de situación fiscal y, en su caso, estado de
+              cuenta.
+            </p>
+            <p>
+              El sistema lee el XML de la factura para validar que el RFC, el UUID, el total, el
+              método de pago y la forma de pago coincidan con la información capturada. En pagos
+              con método <strong>PPD</strong>, se exige la documentación adicional y se verifica
+              que la factura corresponda al proveedor registrado, reduciendo riesgos de error o
+              documentos apócrifos.
+            </p>
+          </div>
+        </section>
+
+        <!-- IMPACTO DEL PROYECTO -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Impacto del proyecto</h2>
+            <ul>
+              <li>
+                ⚡️Centralización de facturas, XML y documentos fiscales por proveedor, facilitando
+                auditorías y seguimiento.
+              </li>
+              <li>
+                ⚡️Disminución de rechazos por errores en CFDI gracias a la validación automática
+                del XML y el PDF.
+              </li>
+              <li>
+                ⚡️Mayor control sobre montos pendientes, pagados y rechazados mediante tableros
+                resumidos por estatus.
+              </li>
+              <li>
+                ⚡️Reducción de la comunicación manual (correos, mensajes) entre proveedores y área
+                administrativa.
+              </li>
+              <li>
+                ⚡️Mejora en el cumplimiento fiscal al exigir y controlar la vigencia de opinión de
+                cumplimiento y constancia de situación fiscal.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- OBJETIVOS -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Objetivos del proyecto</h2>
+            <ul>
+              <li>
+                🎯Ofrecer a los proveedores un portal claro para cargar facturas y documentos
+                requeridos, con visibilidad de su estatus.
+              </li>
+              <li>
+                🎯Automatizar la validación de CFDI (RFC, UUID, total, forma/método de pago) a
+                partir de la lectura del XML y el PDF.
+              </li>
+              <li>
+                🎯Diferenciar facturas PUE y PPD, solicitando documentación adicional cuando se
+                trate de pagos en parcialidades.
+              </li>
+              <li>
+                🎯Dotar al equipo administrativo de un tablero consolidado de facturas: nuevas,
+                pendientes de pago, pagadas y rechazadas.
+              </li>
+              <li>
+                🎯Mantener un historial completo de facturas y documentos por proveedor para uso
+                contable y operativo.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- RESULTADOS -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Resultados</h2>
+            <p>
+              El portal permitió estandarizar el proceso de recepción de facturas, reduciendo
+              tiempos de revisión y aclaraciones con proveedores. Los tableros de resumen brindan
+              mayor visibilidad de montos comprometidos, pagos realizados y facturas rechazadas.
+            </p>
+            <p>
+              Además, el control de documentación fiscal por proveedor simplifica la preparación
+              para auditorías y facilita que el área de finanzas tenga la información actualizada
+              sin depender de archivos dispersos o correos aislados.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ASIDE - FICHA DEL PROYECTO -->
+      <aside class="project-detail-aside">
+        <div class="project-detail-card">
+          <h3>Ficha del proyecto</h3>
+          <dl>
+            <div class="dl-row">
+              <dt>Tipo de solución</dt>
+              <dd>Plataforma web · Portal de proveedores y facturas</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Rol</dt>
+              <dd>Desarrollador de software · Full-stack</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Contexto</dt>
+              <dd>
+                Gestión de proveedores, recepción de facturas CFDI y control documental para el
+                Club León
+              </dd>
+            </div>
+            <div class="dl-row">
+              <dt>Tecnologías</dt>
+              <dd>
+                Angular · TypeScript · Bootstrap · Firebase / API REST · Lectura CFDI XML ·
+                Procesamiento de PDFs · SweetAlert2
+              </dd>
+            </div>
+          </dl>
+
+          <div class="project-card-tags">
+            <span class="project-card-tag">Portal de proveedores</span>
+            <span class="project-card-tag">Validación CFDI</span>
+            <span class="project-card-tag">Control de pagos</span>
+            <span class="project-card-tag">Documentos fiscales</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- NUEVA FILA 2 COLUMNAS -->
+    <section class="project-two-column-row">
+      <!-- PARTICIPACIÓN -->
+      <section class="project-block project-block-card project-block-card-accent">
+        <div class="project-block-inner">
+          <h2>Participación en el proyecto</h2>
+          <ul>
+            <li>
+              📍Levantamiento de requisitos con finanzas, compras y proveedores clave para definir
+              el flujo de recepción y validación de facturas.
+            </li>
+            <li>
+              📍Diseño del dashboard de administrador con tarjetas de resumen (total de facturas,
+              pendientes, pagadas, rechazadas).
+            </li>
+            <li>
+              📍Implementación del flujo de carga de factura PDF y XML, lectura de CFDI y
+              validaciones de estructura y datos.
+            </li>
+            <li>
+              📍Desarrollo de módulos de documentos de proveedor (opinión de cumplimiento,
+              constancia, estado de cuenta) con vigencia.
+            </li>
+            <li>
+              📍Configuración de estados de factura y acciones de aprobar/rechazar con feedback
+              visual y mensajes claros al proveedor.
+            </li>
+            <li>
+              📍Pruebas con facturas reales, ajuste de reglas de negocio y mejoras de UX para
+              minimizar errores de captura.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- MÓDULOS PRINCIPALES -->
+      <section class="project-block project-block-card">
+        <div class="project-block-inner">
+          <h2>Módulos principales</h2>
+          <ul>
+            <li>
+              <strong>🔸Dashboard del administrador:</strong> tarjetas con totales de facturas por
+              estatus y accesos rápidos a cada vista.
+            </li>
+            <li>
+              <strong>🔸Facturas de proveedores:</strong> tabla con filtros, búsqueda por razón
+              social, descarga de PDF/XML y acciones de aceptar o rechazar.
+            </li>
+            <li>
+              <strong>🔸Subir factura:</strong> formulario para cargar PDF y XML, lectura del CFDI,
+              vista previa de datos y confirmación de carga.
+            </li>
+            <li>
+              <strong>🔸Documentos de proveedores:</strong> sección para que cada proveedor suba su
+              opinión de cumplimiento, constancia de situación fiscal y estado de cuenta.
+            </li>
+            <li>
+              <strong>🔸Historial de facturas:</strong> consulta de facturas procesadas por
+              proveedor, periodo o estatus, con detalle de observaciones.
+            </li>
+            <li>
+              <strong>🔸Alertas y validaciones:</strong> mensajes de error cuando el XML no
+              coincide con el proveedor, el método de pago no es permitido o falta documentación
+              para PPD.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="project-gallery">
+      <h2>Galería</h2>
+      <p class="gallery-hint">
+        Vistas del dashboard de facturas, listado de proveedores, carga de CFDI, documentos de
+        proveedor y detalle de facturas con observaciones.
+      </p>
+
+      <div class="gallery-layout">
+        <!-- IMAGEN PRINCIPAL -->
+        <div class="gallery-main">
+          <img
+            [src]="activeImage.src"
+            [alt]="activeImage.alt"
+            class="gallery-main-img"
+          />
+        </div>
+
+        <!-- MINIATURAS -->
+        <div class="gallery-thumbs">
+          <ng-container *ngFor="let img of galleryImages; let i = index">
+            <button
+              *ngIf="i !== activeIndex"
+              type="button"
+              class="gallery-thumb"
+              (click)="setActive(i)"
+            >
+              <img [src]="img.src" [alt]="img.alt" />
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

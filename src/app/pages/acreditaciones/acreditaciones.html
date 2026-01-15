@@ -1,0 +1,269 @@
+<section class="section section-project-detail">
+  <div class="container project-detail">
+    <header class="project-detail-header">
+      <a routerLink="/proyectos" class="back-link"> Volver a proyectos</a>
+      <h1 class="project-detail-title">Acreditaciones del Club León</h1>
+
+      <div class="project-meta-strip">
+        <span class="project-meta-tag">Club León · Sistema de acreditaciones</span>
+        <span class="project-meta-tag">Autor: Ignacio Sánchez</span>
+        <span class="project-meta-tag">Versión: v1.0.0</span>
+      </div>
+
+      <p class="project-detail-subtitle">
+        Plataforma web para la gestión integral de acreditaciones de prensa y personal autorizado
+        en días de partido del Club León. Centraliza postulaciones, validaciones, estados de
+        acreditación y emisión de constancias en PDF enviadas por correo electrónico.
+      </p>
+    </header>
+
+    <!-- GRID PRINCIPAL -->
+    <div class="project-detail-grid">
+      <!-- COLUMNA PRINCIPAL -->
+      <div class="project-detail-main">
+        <!-- RESUMEN -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Resumen</h2>
+            <p>
+              El sistema de acreditaciones permite a medios de comunicación y personal autorizado
+              registrarse, postularse a un partido específico y dar seguimiento al estatus de su
+              solicitud desde un portal centralizado. El área administrativa administra jornadas,
+              revisa postulados y decide su aceptación o rechazo con una interfaz optimizada para
+              la operación en días de partido.
+            </p>
+            <p>
+              Una vez aprobada la solicitud, el sistema genera automáticamente una constancia de
+              acreditación en PDF con los datos del acreditado, partido, zona asignada y
+              recomendaciones de acceso. Dicha constancia se envía por correo electrónico como
+              anexo, facilitando el control de ingreso en el Estadio León.
+            </p>
+          </div>
+        </section>
+
+        <!-- IMPACTO DEL PROYECTO -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Impacto del proyecto</h2>
+            <ul>
+              <li>
+                ⚡️Sustitución de registros dispersos (hojas de cálculo, correos manuales) por un
+                flujo único de acreditaciones.
+              </li>
+              <li>
+                ⚡️Visibilidad en tiempo real de cuántos acreditados hay por partido, zona y tipo de
+                función (reportero, fotógrafo, camarógrafo, etc.).
+              </li>
+              <li>
+                ⚡️Reducción de errores al validar automáticamente correos, medios, zonas y jornadas
+                activas contra la base de datos de Firebase.
+              </li>
+              <li>
+                ⚡️Mejor experiencia para el acreditado: puede solicitar, consultar y conocer el
+                resultado de su postulación desde un solo portal.
+              </li>
+              <li>
+                ⚡️Formalización del proceso mediante correos de confirmación y PDFs de
+                acreditación, alineando operación de cancha, prensa y comunicación.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- OBJETIVOS -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Objetivos del proyecto</h2>
+            <ul>
+              <li>
+                🎯Centralizar el registro, validación y control de acreditaciones de prensa y staff
+                operativo del Club León.
+              </li>
+              <li>
+                🎯Evitar duplicidad de solicitudes por jornada mediante validaciones sobre Firebase
+                (medio, correo, zona, horario y partido).
+              </li>
+              <li>
+                🎯Automatizar la generación de constancias en PDF y su envío por correo al
+                acreditado aceptado.
+              </li>
+              <li>
+                🎯Proveer a los administradores una vista clara de registros pendientes, postulados
+                y un historial filtrable por jornada y estatus.
+              </li>
+              <li>
+                🎯Mantener un histórico exportable de acreditaciones para fines de control,
+                estadísticas y seguimiento de medios.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- RESULTADOS -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Resultados</h2>
+            <p>
+              El sistema consolidó el proceso de acreditaciones en una sola plataforma,
+              eliminando gran parte de la comunicación manual por correo y reduciendo la
+              posibilidad de errores en la asignación de zonas y accesos.
+            </p>
+            <p>
+              En la operación diaria se cuenta con una mejor planeación de jornadas, un registro
+              confiable de quiénes han sido aceptados o rechazados y una trazabilidad clara
+              gracias a los historiales y documentos PDF generados para cada partido.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ASIDE - FICHA DEL PROYECTO -->
+      <aside class="project-detail-aside">
+        <div class="project-detail-card">
+          <h3>Ficha del proyecto</h3>
+          <dl>
+            <div class="dl-row">
+              <dt>Tipo de solución</dt>
+              <dd>Plataforma web interna · Gestión de acreditaciones</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Rol</dt>
+              <dd>Desarrollador de software · Full-stack</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Contexto</dt>
+              <dd>
+                Club León · Acreditaciones de prensa, staff y personal operativo en días de partido
+              </dd>
+            </div>
+            <div class="dl-row">
+              <dt>Tecnologías</dt>
+              <dd>
+                Angular · Bootstrap 5 · TypeScript · Firebase Realtime DB · Firebase Auth ·
+                SweetAlert2 · jsPDF · html2canvas · Integración con Gmail / SMTP
+              </dd>
+            </div>
+          </dl>
+
+          <div class="project-card-tags">
+            <span class="project-card-tag">Acreditaciones</span>
+            <span class="project-card-tag">Gestión de jornadas</span>
+            <span class="project-card-tag">PDF de constancia</span>
+            <span class="project-card-tag">Notificaciones por correo</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- NUEVA FILA: PARTICIPACIÓN + MÓDULOS -->
+    <section class="project-two-column-row">
+      <!-- PARTICIPACIÓN -->
+      <section class="project-block project-block-card project-block-card-accent">
+        <div class="project-block-inner">
+          <h2>Participación en el proyecto</h2>
+          <ul>
+            <li>
+              📍Levantamiento de requisitos con comunicación, prensa y operación para definir el
+              flujo completo de acreditaciones.
+            </li>
+            <li>
+              📍Diseño de la experiencia de login, panel de administrador y panel del acreditado,
+              alineando UI con la identidad del Club León.
+            </li>
+            <li>
+              📍Implementación de la lógica de verificación de titulares y medios contra Firebase
+              para evitar registros duplicados por jornada.
+            </li>
+            <li>
+              📍Desarrollo del módulo de jornadas (partido, fecha, hora, estadio) y activación de
+              partidos disponibles para acreditación.
+            </li>
+            <li>
+              📍Generación de PDFs de constancia con jsPDF + html2canvas e integración con correo
+              (Gmail/SMTP) para el envío automático.
+            </li>
+            <li>
+              📍Construcción de vistas de “Registros pendientes”, “Postulados” e “Historial de
+              acreditaciones” con filtros y exportación.
+            </li>
+            <li>
+              📍Pruebas funcionales en jornadas reales y ajustes de performance/UX para soportar
+              picos de uso previos a los partidos.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- MÓDULOS PRINCIPALES -->
+      <section class="project-block project-block-card">
+        <div class="project-block-inner">
+          <h2>Módulos principales</h2>
+          <ul>
+            <li>
+              <strong>🔸Acceso y registro:</strong> pantalla de inicio de sesión y registro de
+              nuevos usuarios con validación de correo y recuperación de contraseña.
+            </li>
+            <li>
+              <strong>🔸Gestión de jornadas:</strong> alta y activación de jornadas con partido,
+              fecha, hora y estadio, visibles tanto para admins como para acreditados.
+            </li>
+            <li>
+              <strong>🔸Postulaciones:</strong> formulario dinámico donde el usuario selecciona
+              partido, zona (por ejemplo Tribuna de Prensa, Cancha) y función.
+            </li>
+            <li>
+              <strong>🔸Panel del acreditado:</strong> vista de estado de su postulación
+              (pendiente, aceptado, rechazado) y acceso a su PDF de constancia.
+            </li>
+            <li>
+              <strong>🔸Registros pendientes y postulados:</strong> módulo para que el
+              administrador revise solicitudes y acepte/rechace con un solo clic.
+            </li>
+            <li>
+              <strong>🔸Historial de acreditaciones:</strong> tabla filtrable por jornada y
+              estatus, con opción de descarga en PDF para control interno.
+            </li>
+            <li>
+              <strong>🔸Notificaciones por correo:</strong> envío automático de correos de
+              aceptación o rechazo con detalles del partido y acreditación adjunta.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="project-gallery">
+      <h2>Galería</h2>
+      <p class="gallery-hint">
+        Pantallas de login, panel de administrador, perfil del acreditado y vistas de historial,
+        así como ejemplo del correo enviado con la acreditación en PDF.
+      </p>
+
+      <div class="gallery-layout">
+        <!-- IMAGEN PRINCIPAL -->
+        <div class="gallery-main">
+          <img
+            [src]="activeImage.src"
+            [alt]="activeImage.alt"
+            class="gallery-main-img"
+          />
+        </div>
+
+        <!-- MINIATURAS -->
+        <div class="gallery-thumbs">
+          <ng-container *ngFor="let img of galleryImages; let i = index">
+            <button
+              *ngIf="i !== activeIndex"
+              type="button"
+              class="gallery-thumb"
+              (click)="setActive(i)"
+            >
+              <img [src]="img.src" [alt]="img.alt" />
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
