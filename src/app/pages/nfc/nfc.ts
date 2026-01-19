@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './nfc.html',
-  styleUrls: ['./nfc.css'], // si usas scss, pon .scss
+  styleUrls: ['./nfc.css'],
 })
 export class Nfc {
   galleryImages = [
@@ -16,19 +16,20 @@ export class Nfc {
       alt: 'Pantalla de escaneo NFC y lectura de tarjeta',
     },
     {
-      src: 'assets/nfc/nfc3.png',
+      src: 'assets/nfc/nfc5.png',
       alt: 'Validación exitosa de acceso con datos del titular',
     },
     {
-      src: 'assets/nfc/nfc4.png',
+      src: 'assets/nfc/nfc3.png',
       alt: 'Validación rechazada por reglas de acceso o vigencia',
     },
     {
-      src: 'assets/nfc/nfc2.png',
+      src: 'assets/nfc/nfc4.png',
       alt: 'Configuración o visualización de reglas por zona/rol',
     },
     {
-      src: 'assets/nfc/nfc.mp4',
+      // 👇 aquí pon tu imagen final (antes era video)
+      src: 'assets/nfc/nfc1.png',
       alt: 'Bitácora e historial de accesos con filtros por fecha',
     },
   ];
@@ -41,9 +42,5 @@ export class Nfc {
 
   setActive(index: number) {
     this.activeIndex = index;
-  }
-
-  isVideo(src: string) {
-    return !!src?.toLowerCase().endsWith('.mp4');
   }
 }

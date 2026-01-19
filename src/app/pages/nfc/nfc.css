@@ -33,15 +33,15 @@
   color: #6b7280;
   text-decoration: none;
   margin-bottom: 0.9rem;
+}
 
-  &::before {
-    content: "←";
-    font-size: 0.9rem;
-  }
+.back-link::before {
+  content: "←";
+  font-size: 0.9rem;
+}
 
-  &:hover {
-    color: #059669;
-  }
+.back-link:hover {
+  color: #059669;
 }
 
 .project-detail-title {
@@ -244,7 +244,7 @@
   background: linear-gradient(135deg, #dcfce7, #f0fdf4);
 }
 
-/* GALERÍA ESPECIAL PARA CELULAR */
+/* GALERÍA */
 .project-gallery {
   border-top: 1px solid #e5e7eb;
   padding-top: 1.4rem;
@@ -265,7 +265,6 @@
   color: #6b7280;
 }
 
-/* Layout pensado para screenshots verticales de celular */
 .gallery-layout-mobile {
   display: flex;
   flex-direction: column;
@@ -273,7 +272,7 @@
   gap: 1.4rem;
 }
 
-/* “Phone frame” principal */
+/* Phone frame */
 .phone-frame {
   width: 260px;
   max-width: 100%;
@@ -306,34 +305,7 @@
   -webkit-user-drag: none;
 }
 
-/* VIDEO “modo gif”: SIN UI, SIN INTERACCIÓN */
-.phone-video {
-  width: 100%;
-  height: 100%;
-  border-radius: 1.6rem;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  background: #020617;
-
-  /* clave para que no aparezca overlay de controles */
-  pointer-events: none;
-
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-user-drag: none;
-}
-
-/* Por si WebKit insiste (Safari/iOS) */
-.phone-video::-webkit-media-controls,
-.phone-video::-webkit-media-controls-panel,
-.phone-video::-webkit-media-controls-play-button,
-.phone-video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-  -webkit-appearance: none;
-}
-
-/* Miniaturas tipo celular */
+/* Miniaturas */
 .phone-thumbs {
   display: flex;
   gap: 0.8rem;
@@ -372,27 +344,6 @@
 .phone-thumb:hover img {
   transform: translateY(-2px) scale(1.02);
   filter: brightness(1.05);
-}
-
-/* Placeholder de video en miniatura */
-.phone-thumb-video {
-  width: 100%;
-  height: 100%;
-  border-radius: 1.1rem;
-  background: #0b1220;
-  display: grid;
-  place-items: center;
-  position: relative;
-}
-
-.phone-thumb-badge {
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  padding: 0.25rem 0.55rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.92);
 }
 
 /* RESPONSIVE */

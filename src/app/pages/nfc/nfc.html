@@ -134,22 +134,7 @@
       <div class="gallery-layout-mobile">
         <!-- “CELULAR” PRINCIPAL -->
         <div class="phone-frame" aria-hidden="true">
-          <ng-container *ngIf="isVideo(activeImage.src); else phoneImage">
-            <video
-              class="phone-video"
-              autoplay
-              loop
-              muted
-              playsinline
-              preload="auto"
-            >
-              <source [src]="activeImage.src" type="video/mp4" />
-            </video>
-          </ng-container>
-
-          <ng-template #phoneImage>
-            <img [src]="activeImage.src" [alt]="activeImage.alt" class="phone-img" />
-          </ng-template>
+          <img [src]="activeImage.src" [alt]="activeImage.alt" class="phone-img" />
         </div>
 
         <!-- MINIATURAS -->
@@ -162,15 +147,7 @@
               (click)="setActive(i)"
               [attr.aria-label]="'Abrir: ' + img.alt"
             >
-              <ng-container *ngIf="isVideo(img.src); else thumbImage">
-                <div class="phone-thumb-video">
-                  <span class="phone-thumb-badge">VIDEO</span>
-                </div>
-              </ng-container>
-
-              <ng-template #thumbImage>
-                <img [src]="img.src" [alt]="img.alt" />
-              </ng-template>
+              <img [src]="img.src" [alt]="img.alt" />
             </button>
           </ng-container>
         </div>

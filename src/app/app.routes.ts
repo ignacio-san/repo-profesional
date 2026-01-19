@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Proyectos } from './pages/proyectos/proyectos';
-import { Blog} from './pages/blog/blog';
 import { SobreMi } from './pages/sobre-mi/sobre-mi';
 import { Contacto } from './pages/contacto/contacto';
 import { Plateas } from './pages/plateas/plateas';
@@ -20,7 +19,6 @@ export const routes: Routes = [
   { path: 'acreditaciones', component: Acreditaciones },
   { path: 'castores', component: Castores },
   { path: 'nfc', component: Nfc },
-  { path: 'blog', component: Blog },
   { path: 'sobre-mi', component: SobreMi },
   { path: 'contacto', component: Contacto },
   { path: '**', redirectTo: '' },
