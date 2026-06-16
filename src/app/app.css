@@ -114,6 +114,22 @@
   }
 }
 
+/* Alinear footer con el header en pantallas grandes (mismas compensaciones) */
+@media (min-width: 1200px) {
+  .footer-container {
+    /* aplicar la misma compensación que el header para que queden alineados */
+    margin-left: -7rem;
+    margin-right: -7rem;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
+
+  .footer-divider {
+    margin-left: -7rem;
+    margin-right: -7rem;
+  }
+}
+
 /* ============== RESPONSIVE HEADER ============== */
 
 @media (max-width: 900px) {
@@ -167,7 +183,7 @@
 
 /* aquí le damos más ancho y mismo “marco” que el contenido de arriba */
 .footer-container {
-  max-width: 1200px;        /* antes 1120px, ahora ocupa más */
+  max-width: 1120px;        /* mantener el mismo ancho que el header */
   margin: 0 auto;
   padding: 0 1.5rem;        /* mismo padding lateral que usas arriba */
   display: grid;
@@ -236,7 +252,7 @@
 
 /* LÍNEA Y COPYRIGHT */
 .footer-divider {
-  max-width: 1200px;        /* igual que footer-container */
+  max-width: 1120px;        /* igual que footer-container */
   margin: 0.9rem auto 0.5rem;
   border: none;
   border-top: 1px solid #e2e2e2;
@@ -252,5 +268,30 @@
 @media (max-width: 900px) {
   .footer-container {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Ajustes adicionales para dispositivos pequeños */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 1rem;
+    gap: 0.9rem;
+  }
+
+  .footer-info h2 {
+    font-size: 1.05rem;
+  }
+
+  .footer-description {
+    font-size: 0.86rem;
+  }
+
+  .footer-icons {
+    justify-content: flex-start;
+  }
+
+  .footer-bottom {
+    font-size: 0.72rem;
+    padding: 0.5rem 0 0;
   }
 }

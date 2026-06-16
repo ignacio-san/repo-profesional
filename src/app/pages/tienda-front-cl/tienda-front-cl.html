@@ -1,0 +1,170 @@
+<section class="section section-project-detail">
+  <div class="container project-detail">
+    <header class="project-detail-header">
+      <a routerLink="/proyectos" class="back-link">Volver a proyectos</a>
+      <h1 class="project-detail-title">Sistema de Tienda — TiendaFrontCL</h1>
+
+      <div class="project-meta-strip">
+        <span class="project-meta-tag">TiendaFrontCL · Frontend + Integración Backend</span>
+        <span class="project-meta-tag">Autor: Ignacio Sánchez</span>
+        <span class="project-meta-tag">Versión: v1.0.0</span>
+      </div>
+
+      <p class="project-detail-subtitle">
+        Plataforma frontend mobile-first para un e‑commerce real conectada al backend de la tienda.
+      </p>
+    </header>
+
+    <div class="project-detail-grid">
+      <div class="project-detail-main">
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Resumen</h2>
+            <p>
+              La solución es un frontend Next.js (App Router) optimizado para móvil que consume
+              APIs del backend para catálogo, carrito, órdenes y pagos. Ofrece navegación rápida,
+              carrito persistente con <code>x-session-id</code>, merge al autenticar y checkout seguro
+              con idempotency keys. Soporta storefront y paneles admin protegidos por roles.
+            </p>
+            <p>
+              Alcance del proyecto: storefront público responsivo, integración de carrito persistente mediante identificadores de sesión
+              anónimos (<code>x-session-id</code>), lógica de unificación (*merge*) de canastas al autenticarse y un módulo administrativo
+              blindado mediante políticas de acceso basadas en roles (RBAC).
+            </p>
+          </div>
+        </section>
+
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Impacto del proyecto</h2>
+            <ul>
+              <li>- Mejor experiencia móvil con menor tiempo de carga y menos fricción al comprar.</li>
+              <li>- Carrito persistente y merge fiable entre sesiones anónimas y autenticadas.</li>
+              <li>- Checkout seguro con reintentos controlados y trazabilidad de pagos.</li>
+              <li>- Historial y auditoría de órdenes para atención al cliente y reconciliación.</li>
+              <li>- Herramientas admin para mantener catálogo, stock y promociones en tiempo real.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Objetivos del proyecto</h2>
+            <ul>
+              <li>- Proveer una UI mobile-first rápida y accesible para catálogo y checkout.</li>
+              <li>- Minimizar JS cliente usando Server Components y aislar islas interactivas.</li>
+              <li>- Implementar cliente API centralizado con manejo uniforme de errores y tokens.</li>
+              <li>- Garantizar flujo de carrito robusto (sessionId + merge + token backend).</li>
+              <li>- Permitir operaciones admin seguras y controladas por roles.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <aside class="project-detail-aside">
+        <div class="project-detail-card">
+          <h3>Ficha del proyecto</h3>
+          <dl>
+            <div class="dl-row">
+              <dt>Tipo de solución</dt>
+              <dd>Frontend · Tienda e‑commerce (storefront + admin)</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Rol</dt>
+              <dd>Desarrollador Frontend / Full‑stack (integración API)</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Contexto</dt>
+              <dd>Consumo de APIs reales, Firebase Auth, Stripe, procesamiento de carrito y órdenes</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Tecnologías</dt>
+              <dd>Next.js · TypeScript · Tailwind CSS · Firebase · Node/Express · Stripe</dd>
+            </div>
+          </dl>
+
+          <div class="project-card-tags">
+            <span class="project-card-tag">E‑commerce</span>
+            <span class="project-card-tag">Mobile‑first</span>
+            <span class="project-card-tag">Pagos</span>
+            <span class="project-card-tag">Admin</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="project-two-column-row">
+      <section class="project-block project-block-card project-block-card-accent">
+        <div class="project-block-inner">
+          <h2>Participación en el proyecto</h2>
+          <ul>
+            <li>
+              📍Implementé el cliente API central con `Authorization`, `x-session-id` e Idempotency-Key.
+            </li>
+            <li>
+              📍Diseñé y optimicé vistas mobile-first para catálogo, detalle, carrito y checkout.
+            </li>
+            <li>
+              📍Sincronización de carrito anónimo usando `x-session-id` y merge al autenticarse.
+            </li>
+            <li>
+              📍Integré Firebase Auth para exchange de tokens y flujo seguro register-or-login.
+            </li>
+            <li>
+              📍Implementé el flujo de checkout con `POST /pagos/iniciar` y manejo de clientSecret.
+            </li>
+            <li>
+              📍Añadí protecciones por rol en vistas admin y manejo de errores HTTP.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-block project-block-card">
+        <div class="project-block-inner">
+          <h2>Módulos principales</h2>
+          <ul>
+            <li>
+              <strong>🔸Catálogo:</strong> listados paginados, filtros, búsqueda y páginas de detalle.
+            </li>
+            <li>
+              <strong>🔸Carrito:</strong> persistencia anónima (x-session-id), CRUD de items, merge al login.
+            </li>
+            <li>
+              <strong>🔸Checkout y Pagos:</strong> creación de órdenes, <code>/pagos/iniciar</code>, idempotency keys.
+            </li>
+            <li>
+              <strong>🔸Autenticación:</strong> Firebase → register-or-login → JWT backend.
+            </li>
+            <li>
+              <strong>🔸Admin:</strong> gestión de productos, inventario y órdenes con control de roles.
+            </li>
+            <li>
+              <strong>🔸Cliente API:</strong> apiFetch central con ApiError, encabezados estándar y manejo de payloads.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section class="project-gallery">
+      <h2>Galería</h2>
+      <p class="gallery-hint">Capturas sugeridas: listado de productos, detalle de producto, carrito y flujo de checkout.</p>
+
+      <div class="gallery-layout">
+        <div class="gallery-main">
+          <img [src]="galleryImages[activeIndex].src" [alt]="galleryImages[activeIndex].alt" class="gallery-main-img" />
+        </div>
+
+        <div class="gallery-thumbs">
+          <ng-container *ngFor="let img of galleryImages; let i = index">
+            <button *ngIf="i !== activeIndex" type="button" class="gallery-thumb" (click)="setActive(i)">
+              <img [src]="img.src" [alt]="img.alt" />
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+

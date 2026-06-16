@@ -4,7 +4,7 @@
 
 /* HERO */
 .section-hero {
-  padding: 5.2rem 0 4.2rem;
+  padding: 7rem 0 4.2rem; /* aumentar espacio superior para separar del topbar */
   background:
     radial-gradient(circle at 12% 10%, rgba(16, 185, 129, 0.14) 0%, rgba(248, 250, 252, 0) 40%),
     radial-gradient(circle at 88% 18%, rgba(34, 197, 94, 0.10) 0%, rgba(248, 250, 252, 0) 42%),
@@ -19,7 +19,7 @@
 }
 
 .hero-grid {
-    margin-top: -3.2rem; /* 👈 sube todo el contenido */
+    margin-top: 0; /* no usar margen negativo: mantener flujo normal */
   display: grid;
   grid-template-columns: minmax(0, 1.75fr) minmax(0, 1.05fr);
   gap: 2.2rem;
@@ -244,7 +244,7 @@
 /* RESPONSIVE */
 @media (max-width: 980px) {
   .hero-grid {
-    margin-top: -3.2rem; /* 👈 sube todo el contenido */
+    margin-top: 0; /* quitar margen negativo en pantallas pequeñas */
     grid-template-columns: minmax(0, 1fr);
     gap: 1.4rem;
   }

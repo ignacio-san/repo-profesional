@@ -1,0 +1,263 @@
+<section class="section section-project-detail">
+  <div class="container project-detail">
+    <header class="project-detail-header">
+      <a routerLink="/proyectos" class="back-link">Volver a proyectos</a>
+      <h1 class="project-detail-title">FrontClub — App Club León</h1>
+
+      <div class="project-meta-strip">
+        <span class="project-meta-tag">Club León · Aplicación móvil</span>
+        <span class="project-meta-tag">Autor: Ignacio Sánchez</span>
+        <span class="project-meta-tag">Versión: v2.0.0</span>
+      </div>
+
+      <p class="project-detail-subtitle">
+        Cliente móvil para aficionados con noticias, reels, galería, beneficios y notificaciones.
+      </p>
+    </header>
+
+    <!-- GRID PRINCIPAL -->
+    <div class="project-detail-grid">
+      <!-- COLUMNA PRINCIPAL -->
+      <div class="project-detail-main">
+        <!-- RESUMEN -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Resumen</h2>
+            <p>
+              FrontClub es la aplicación móvil del Club León diseñada para centralizar noticias,
+              contenido de video (reels), galería de imágenes, beneficios para socios y notificaciones
+              segmentadas. El cliente está implementado en Flutter y se conecta a APIs REST
+              escalables; utiliza Firebase para autenticación, mensajería y analíticas.
+            </p>
+            <p>
+              Alcance del proyecto: cliente móvil multiplataforma (iOS/Android), integración con
+              CMS para gestión de contenidos, sistema de promociones y módulos offline para
+              consumo en estadios con conectividad intermitente.
+            </p>
+            <p>
+              Duración y equipo: desarrollo iterativo por sprints de 2 semanas durante 6 meses,
+              con un equipo multidisciplinario (2 mobile, 1 backend, 1 QA, 1 product/marketing).
+            </p>
+            <p>
+              Requisitos técnicos clave: arranque rápido (TTFR < 2s en conexiones móviles 4G),
+              resiliencia en picos de tráfico, reproducibilidad de reprocesos multimedia y soporte
+              para deep links y campañas promocionales segmentadas.
+            </p>
+          </div>
+        </section>
+
+        <!-- IMPACTO DEL PROYECTO -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Impacto del proyecto</h2>
+            <ul>
+              <li>- Entrega de contenido jerarquizado y en tiempo real, mejorando la relevancia para aficionados.</li>
+              <li>- Incremento del engagement en campañas: notificaciones y deep links aumentaron la apertura de promociones.</li>
+              <li>- Mejor experiencia multimedia: reducción de buffering y mayor tasa de reproducción completa gracias a precache y CDNs.</li>
+              <li>- Mejoras operativas: reducción de tickets de soporte relacionados con accesos y notificaciones al centralizar flujos.</li>
+              <li>- Aumento de disponibilidad en eventos: estrategias de cache y degradado graceful permitieron servicio durante picos.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- OBJETIVOS -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Objetivos del proyecto</h2>
+            <ul>
+              <li>- Proveer una experiencia móvil estable y rápida con métricas objetivo: TTFR &lt; 2s y 95% de frames sin drop en scrolls críticos.</li>
+              <li>- Soportar alta concurrencia en días de partido mediante paginación, caché y límites de concurrencia en requests.</li>
+              <li>- Implementar mecanismos de autenticación robustos y manejo de sesiones seguras con refresco automático de tokens.</li>
+              <li>- Permitir campañas segmentadas por interés/zona con deep links accionables y medición de conversión.</li>
+              <li>- Garantizar accesibilidad (WCAG AA) y calidad mediante pruebas automatizadas y revisiones de usabilidad.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- RESULTADOS -->
+        <section class="project-block">
+          <div class="project-block-inner">
+            <h2>Resultados</h2>
+            <p>
+              Se entregó una versión estable y optimizada del cliente móvil con soporte para campañas,
+              galería multimedia y notificaciones segmentadas. Los principales indicadores observados
+              durante las primeras semanas incluyeron mejoras en tiempos de carga y engagement.
+            </p>
+            <ul>
+              <li>- Tiempo medio de primer render reducido en un 40% gracias a estrategias de precarga y optimización de assets.</li>
+              <li>- Tasa de reproducción completa de videos incrementada por el uso de thumbnails y warming de video.</li>
+              <li>- Cache hit ratio mejorado mediante CDN y cache local, reduciendo peticiones al backend durante picos.</li>
+              <li>- Implementación de notificaciones segmentadas con aumento medible en apertura y conversión de promociones.</li>
+              <li>- Proceso de despliegue con flavors y checklist, permitiendo releases controlados a App Store y Play Store.</li>
+            </ul>
+            <p>
+              Aprendizajes: priorizar experiencia en condiciones reales (conectividad variable) y diseñar flujos que degraden
+              de forma progresiva para mantener funcionalidad crítica durante eventos masivos.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ASIDE - FICHA DEL PROYECTO -->
+      <aside class="project-detail-aside">
+        <div class="project-detail-card">
+          <h3>Ficha del proyecto</h3>
+          <dl>
+            <div class="dl-row">
+              <dt>Tipo de solución</dt>
+              <dd>Frontend móvil · Cliente Flutter</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Rol</dt>
+              <dd>Desarrollador móvil · Frontend</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Contexto</dt>
+              <dd>Aplicación para aficionados del Club León, con contenido multimedia y notificaciones.</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Tecnologías</dt>
+              <dd>Flutter · Dart · Provider · Dio · Firebase · CachedNetworkImage · Video Player</dd>
+            </div>
+          </dl>
+
+          <div class="project-card-tags">
+            <span class="project-card-tag">Mobile</span>
+            <span class="project-card-tag">Flutter</span>
+            <span class="project-card-tag">Firebase</span>
+            <span class="project-card-tag">Dio</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- NUEVA FILA 2 COLUMNAS -->
+    <section class="project-two-column-row">
+      <!-- PARTICIPACIÓN -->
+      <section class="project-block project-block-card project-block-card-accent">
+        <div class="project-block-inner">
+          <h2>Participación en el proyecto</h2>
+          <ul>
+            <li>
+              📍Levantamiento y definición de requisitos funcionales con stakeholders (marketing,
+              operaciones y área de socios), priorizando flujos de alta interacción durante días
+              de partido.
+            </li>
+            <li>
+              📍Arquitectura del frontend: definición de estructura feature-first en
+              `lib/src/` (screens, providers, services, widgets, models) y patrones de
+              inyección/DI para facilitar pruebas y mantenimiento.
+            </li>
+            <li>
+              📍Implementación del cliente móvil en Flutter: pantallas, navegación, temas,
+              accesibilidad y adaptación a diferentes form-factors; uso de `Provider` para
+              gestión de estado y reactividad.
+            </li>
+            <li>
+              📍Integración con APIs REST: diseño de `Services` con `Dio`, interceptors para
+              inyección de tokens, manejo de envelopes y transformación de errores comunes a
+              `AppError` para UI consistente.
+            </li>
+            <li>
+              📍Autenticación y seguridad: integración con Firebase Auth, manejo de tokens ID,
+              refresco automático y políticas de reintento para solicitudes críticas.
+            </li>
+            <li>
+              📍Multimedia y rendimiento: estrategia de precarga/thumbnail para reels, uso de
+              `CachedNetworkImage`, prefetching y límites en concurrencia para limitar uso de
+              ancho de banda en días pico.
+            </li>
+            <li>
+              📍UX y estados: diseño de componentes para `loading`, `empty` y `error`, optimizando
+              feedback visual y tiempos de interacción (skeletons, placeholders y retry patterns).
+            </li>
+            <li>
+              📍Pruebas y calidad: cobertura con unit tests para mappers y providers, widget tests
+              para pantallas críticas y linters/formateo (`flutter analyze`, `dart format`).
+            </li>
+            <li>
+              📍Despliegue y releases: configuración de flavors/environments, checklist para
+              publicación en App Store / Play Store y manejo seguro de archivos `google-services`.
+            </li>
+            <li>
+              📍Monitoreo y telemetría: instrumentación de eventos clave en Firebase Analytics y
+              trazabilidad de errores; definición de KPIs (TTFR, reproducciones, conversión de
+              cupones) para seguimiento post-lanzamiento.
+            </li>
+            <li>
+              📍Documentación y handoff: creación de documentación técnica para la integración de
+              backend (endpoints y contratos), guías de CI/CD y pasos para onboarding de nuevos
+              desarrolladores.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- MÓDULOS PRINCIPALES -->
+      <section class="project-block project-block-card">
+        <div class="project-block-inner">
+          <h2>Módulos principales</h2>
+          <ul>
+            <li>
+              <strong>🔸Home:</strong> Feed de noticias personalizado por intereses y geolocalización; incluye banners promocionales, tarjetas de resumen y widgets rápidos (Próximo partido, resultados, acceso a beneficios). Soporta paginación infinita, prefetch y placeholders para mejorar el primer render.
+            </li>
+            <li>
+              <strong>🔸Reels / Video:</strong> Sección de reels cortos con reproducción nativa, thumbnails precacheadas y reproducción optimizada mediante warming de video. Incluye controles de calidad adaptativa, gestión de reproducción en segundo plano y métricas de visualización.
+            </li>
+            <li>
+              <strong>🔸Galería:</strong> Grid de imágenes con lazy-loading, visor fullscreen, zoom pinch-to-zoom y soporte para descarga/compartir. Imágenes servidas por CDN con placeholders y fallback en baja conectividad.
+            </li>
+            <li>
+              <strong>🔸Beneficios y Promociones:</strong> Catálogo filtrable por categoría y vigencia, cupones canjeables y QR dinámicos para validación en puntos de venta. Integración con backend para validar disponibilidad en tiempo real.
+            </li>
+            <li>
+              <strong>🔸Cuenta y Perfil:</strong> Autenticación con Firebase (email, social), gestión de perfil, sincronización de preferencias y verificación de socio; manejo de sesiones, recuperación de cuenta y administración de dispositivos.
+            </li>
+            <li>
+              <strong>🔸Notificaciones:</strong> Canal de push segmentado (Firebase Messaging), creación de topics, deep links y acciones interactivas en notificación. Dashboard interno para programar envíos y segmentaciones por interés o zona.
+            </li>
+            <li>
+              <strong>🔸Buscador y Filtrado:</strong> Búsqueda por palabra clave, filtros por fecha/categoría/tipo (noticia, reel, promoción) y resultados con resaltado y sugerencias en tiempo real.
+            </li>
+            <li>
+              <strong>🔸Favoritos y Descargas:</strong> Marcar contenidos favoritos, sincronización offline de recursos seleccionados y gestión de descargas para visualización sin conexión.
+            </li>
+            <li>
+              <strong>🔸Seguridad y Tokens:</strong> `TokenService` con interceptors en `Dio` para inyectar tokens Firebase/ID, refresco automático, manejo de errores 401 y políticas de reintento exponenciales.
+            </li>
+            <li>
+              <strong>🔸Analíticas y Observabilidad:</strong> Integración con Firebase Analytics y logs estructurados; eventos clave: apertura de pantalla, reproducciones, clicks en promociones y conversión de cupones. Soporte para exportar métricas a pipelines de BI.
+            </li>
+            <li>
+              <strong>🔸Configuración y Ajustes:</strong> Accesibilidad (Text Scale, tamaños de target) y ajustes de rendimiento para limitar precarga en conexiones móviles lentas.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <!-- GALERÍA (Diseño tipo memobit: phone-frame) -->
+    <section class="project-gallery project-gallery-mobile">
+      <h2>Galería</h2>
+      <p class="gallery-hint">
+        Capturas de la aplicación en formato móvil: feed, reels, galería y beneficios.
+      </p>
+
+      <div class="gallery-layout-mobile">
+        <!-- “CELULAR” PRINCIPAL -->
+        <div class="phone-frame">
+          <img [src]="activeImage.src" [alt]="activeImage.alt" class="phone-img" />
+        </div>
+
+        <!-- MINIATURAS EN FORMATO CELULAR -->
+        <div class="phone-thumbs">
+          <ng-container *ngFor="let img of galleryImages; let i = index">
+            <button *ngIf="i !== activeIndex" type="button" class="phone-thumb" (click)="setActive(i)">
+              <img [src]="img.src" [alt]="img.alt" />
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
