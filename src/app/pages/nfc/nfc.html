@@ -144,36 +144,10 @@
         </div>
       </section>
     </section>
-
-    <!-- GALERÍA (TELÉFONO) -->
-    <section class="project-gallery project-gallery-mobile">
-      <h2>Galería</h2>
-      <p class="gallery-hint">
-        Capturas sugeridas: pantalla de escaneo, resultado de validación, reglas de acceso y
-        bitácora/historial de eventos.
-      </p>
-
-      <div class="gallery-layout-mobile">
-        <!-- “CELULAR” PRINCIPAL -->
-        <div class="phone-frame" aria-hidden="true">
-          <img [src]="activeImage.src" [alt]="activeImage.alt" class="phone-img" />
-        </div>
-
-        <!-- MINIATURAS -->
-        <div class="phone-thumbs">
-          <ng-container *ngFor="let img of galleryImages; let i = index">
-            <button
-              *ngIf="i !== activeIndex"
-              type="button"
-              class="phone-thumb"
-              (click)="setActive(i)"
-              [attr.aria-label]="'Abrir: ' + img.alt"
-            >
-              <img [src]="img.src" [alt]="img.alt" />
-            </button>
-          </ng-container>
-        </div>
-      </div>
-    </section>
+    <app-project-gallery
+      [images]="galleryImages"
+      mode="phone"
+      hint="Capturas sugeridas: pantalla de escaneo, resultado de validación, reglas de acceso y bitácora/historial de eventos."
+    />
   </div>
 </section>

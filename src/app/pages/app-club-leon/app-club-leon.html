@@ -2,7 +2,7 @@
   <div class="container project-detail">
     <header class="project-detail-header">
       <a routerLink="/proyectos" class="back-link">Volver a proyectos</a>
-      <h1 class="project-detail-title">FrontClub — App Club León</h1>
+      <h1 class="project-detail-title">App Oficial Club León</h1>
 
       <div class="project-meta-strip">
         <span class="project-meta-tag">Club León · Aplicación móvil</span>
@@ -24,7 +24,7 @@
           <div class="project-block-inner">
             <h2>Resumen</h2>
             <p>
-              FrontClub es la aplicación móvil del Club León diseñada para centralizar noticias,
+              App Oficial Club León es la aplicación móvil del Club León diseñada para centralizar noticias,
               contenido de video (reels), galería de imágenes, beneficios para socios y notificaciones
               segmentadas. El cliente está implementado en Flutter y se conecta a APIs REST
               escalables; utiliza Firebase para autenticación, mensajería y analíticas.
@@ -126,6 +126,17 @@
             <span class="project-card-tag">Flutter</span>
             <span class="project-card-tag">Firebase</span>
             <span class="project-card-tag">Dio</span>
+          </div>
+
+          <div class="project-live-links">
+            <a
+              class="btn-link"
+              href="https://play.google.com/store/apps/details?id=mx.clubleon.oficial"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver en Google Play
+            </a>
           </div>
         </div>
       </aside>
@@ -235,29 +246,10 @@
         </div>
       </section>
     </section>
-
-    <!-- GALERÍA (Diseño tipo memobit: phone-frame) -->
-    <section class="project-gallery project-gallery-mobile">
-      <h2>Galería</h2>
-      <p class="gallery-hint">
-        Capturas de la aplicación en formato móvil: feed, reels, galería y beneficios.
-      </p>
-
-      <div class="gallery-layout-mobile">
-        <!-- “CELULAR” PRINCIPAL -->
-        <div class="phone-frame">
-          <img [src]="activeImage.src" [alt]="activeImage.alt" class="phone-img" />
-        </div>
-
-        <!-- MINIATURAS EN FORMATO CELULAR -->
-        <div class="phone-thumbs">
-          <ng-container *ngFor="let img of galleryImages; let i = index">
-            <button *ngIf="i !== activeIndex" type="button" class="phone-thumb" (click)="setActive(i)">
-              <img [src]="img.src" [alt]="img.alt" />
-            </button>
-          </ng-container>
-        </div>
-      </div>
-    </section>
+    <app-project-gallery
+      [images]="galleryImages"
+      mode="phone"
+      hint="Capturas de la app: inicio, noticias, reels, galería y beneficios para socios."
+    />
   </div>
 </section>

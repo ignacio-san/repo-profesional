@@ -226,39 +226,10 @@
         </div>
       </section>
     </section>
-
-    <!-- GALERÍA -->
-    <section class="project-gallery">
-      <h2>Galería</h2>
-      <p class="gallery-hint">
-        Vistas del dashboard de facturas, listado de proveedores, carga de CFDI, documentos de
-        proveedor y detalle de facturas con observaciones.
-      </p>
-
-      <div class="gallery-layout">
-        <!-- IMAGEN PRINCIPAL -->
-        <div class="gallery-main">
-          <img
-            [src]="activeImage.src"
-            [alt]="activeImage.alt"
-            class="gallery-main-img"
-          />
-        </div>
-
-        <!-- MINIATURAS -->
-        <div class="gallery-thumbs">
-          <ng-container *ngFor="let img of galleryImages; let i = index">
-            <button
-              *ngIf="i !== activeIndex"
-              type="button"
-              class="gallery-thumb"
-              (click)="setActive(i)"
-            >
-              <img [src]="img.src" [alt]="img.alt" />
-            </button>
-          </ng-container>
-        </div>
-      </div>
-    </section>
+    <app-project-gallery
+      [images]="galleryImages"
+      mode="desktop"
+      hint="Capturas del portal: login/dashboard, listado de facturas, documentos y carga de PDF/XML."
+    />
   </div>
 </section>

@@ -1,239 +1,99 @@
-<section class="section section-projects">
+<section class="section projects-page">
   <div class="container">
-    <div class="section-header">
-      <p class="section-kicker">Selección</p>
-      <h2 class="section-title">Proyectos</h2>
-      <p class="section-subtitle">
-        Operación interna, logística, accesos, soluciones empresariales y aplicaciones móviles.
+    <header class="page-hero rise">
+      <div class="page-hero-copy">
+        <p class="section-kicker">Archivo de trabajo</p>
+        <h1 class="section-title">Proyectos en producción</h1>
+        <p class="section-subtitle">
+          Sistemas reales en operación: problema, decisión técnica y resultado.
+          Filtra por dominio o abre el caso completo.
+        </p>
+      </div>
+      <aside class="page-hero-meta" aria-label="Resumen del archivo">
+        <div class="meta-stat">
+          <span class="meta-value">{{ projects.length }}</span>
+          <span class="meta-label">Casos</span>
+        </div>
+        <div class="meta-stat">
+          <span class="meta-value">04</span>
+          <span class="meta-label">Dominios</span>
+        </div>
+        <div class="meta-stat">
+          <span class="meta-value">Live</span>
+          <span class="meta-label">En producción</span>
+        </div>
+      </aside>
+    </header>
+
+    <div class="toolbar rise rise-delay-1">
+      <div class="filters" role="tablist" aria-label="Filtros de proyecto">
+        @for (filter of filters; track filter.id) {
+          <button
+            type="button"
+            class="filter"
+            role="tab"
+            [class.active]="activeFilter === filter.id"
+            [attr.aria-selected]="activeFilter === filter.id"
+            (click)="setFilter(filter.id)"
+          >
+            {{ filter.label }}
+          </button>
+        }
+      </div>
+      <p class="count">
+        <span class="count-num">{{ filtered.length }}</span>
+        seleccionados
       </p>
     </div>
 
-    <div class="projects-grid">
-      <!-- PROYECTO 1 -->
-      <article class="project-card">
-        <header class="project-top">
-          <div>
-            <h3 class="project-title">Renovación de palcos y plateas</h3>
-            <p class="project-meta">Club León · Plataforma interna</p>
+    <div class="project-list rise rise-delay-2">
+      @for (project of filtered; track project.route) {
+        <article
+          class="project-item"
+          [class.hot]="hoveredId === project.route"
+          (mouseenter)="setHover(project.route)"
+          (mouseleave)="setHover(null)"
+        >
+          <span class="item-accent" aria-hidden="true"></span>
+
+          <div class="item-main">
+            <div class="item-top">
+              <span class="item-index">{{ project.index }}</span>
+              <span class="item-badge">{{ project.badge }}</span>
+            </div>
+            <h2 class="item-title">{{ project.title }}</h2>
+            <p class="item-client">{{ project.client }}</p>
+            <p class="item-summary">{{ project.summary }}</p>
           </div>
-          <span class="project-badge">Accesos NFC</span>
-        </header>
 
-        <p class="project-description">
-          Aplicación web interna para la gestión de palcos y plateas del Estadio León: renovaciones,
-          asignación de tarjetas NFC, administración de citas y registro de movimientos de venta, todo
-          centralizado en una sola herramienta operativa.
-        </p>
+          <div class="item-side">
+            <div class="side-grid">
+              <div class="side-block">
+                <span class="side-label">Problema</span>
+                <p>{{ project.problem }}</p>
+              </div>
+              <div class="side-block side-block-result">
+                <span class="side-label">Resultado</span>
+                <p>{{ project.result }}</p>
+              </div>
+            </div>
 
-        <div class="project-tech">
-          <span class="tech-pill">Angular</span>
-          <span class="tech-pill">Angular Material</span>
-          <span class="tech-pill">Firebase RTDB</span>
-          <span class="tech-pill">Node.js</span>
-          <span class="tech-pill">NFC</span>
-        </div>
-
-        <footer class="project-footer">
-          <a routerLink="/plateas" class="btn-link">Ver más</a>
-        </footer>
-      </article>
-
-      <!-- PROYECTO 2 -->
-      <article class="project-card">
-        <header class="project-top">
-          <div>
-            <h3 class="project-title">Acreditaciones de medios</h3>
-            <p class="project-meta">Club León · Prensa y personal autorizado</p>
+            <div class="item-footer">
+              <div class="item-stack">
+                @for (tech of project.stack; track tech) {
+                  <span class="chip">{{ tech }}</span>
+                }
+              </div>
+              <a [routerLink]="project.route" class="item-cta">
+                Ver caso
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
-          <span class="project-badge">Web interna</span>
-        </header>
-
-        <p class="project-description">
-          Sistema de acreditaciones para gestionar postulaciones de medios y staff en días de partido.
-          Centraliza registros, validaciones por jornada y emisión de constancias en PDF enviadas por
-          correo electrónico.
-        </p>
-
-        <div class="project-tech">
-          <span class="tech-pill">Angular</span>
-          <span class="tech-pill">Firebase RTDB</span>
-          <span class="tech-pill">SweetAlert2</span>
-          <span class="tech-pill">jsPDF</span>
-          <span class="tech-pill">Bootstrap</span>
-        </div>
-
-        <footer class="project-footer">
-          <a routerLink="/acreditaciones" class="btn-link">Ver más</a>
-        </footer>
-      </article>
-
-      <!-- PROYECTO 3 -->
-      <article class="project-card">
-        <header class="project-top">
-          <div>
-            <h3 class="project-title">Portal de Proveedores y Facturas</h3>
-            <p class="project-meta">Club León · Gestión fiscal y documental</p>
-          </div>
-          <span class="project-badge">Aplicación web</span>
-        </header>
-
-        <p class="project-description">
-          Portal para que proveedores suban facturas PDF/XML y documentos fiscales. Valida CFDI, montos,
-          RFC y requisitos PPD como opinión de cumplimiento. Incluye panel administrativo y estatus de
-          facturas.
-        </p>
-
-        <div class="project-tech">
-          <span class="tech-pill">Angular</span>
-          <span class="tech-pill">Firebase</span>
-          <span class="tech-pill">CFDI XML</span>
-          <span class="tech-pill">PDF</span>
-        </div>
-
-        <footer class="project-footer">
-          <a routerLink="/proveedores" class="btn-link">Ver más</a>
-        </footer>
-      </article>
-
-      <!-- PROYECTO 4 -->
-      <article class="project-card">
-        <header class="project-top">
-          <div>
-            <h3 class="project-title">Gestor de geocercas</h3>
-            <p class="project-meta">Grupo Castores · Rastreo y logística terrestre</p>
-          </div>
-          <span class="project-badge">Logística</span>
-        </header>
-
-        <p class="project-description">
-          Módulo interno para configurar geocercas, monitorear unidades y rastrear paquetes. Genera alertas por
-          desvíos de ruta, detenciones prolongadas o ingreso a zonas críticas para dar visibilidad a operación.
-        </p>
-
-        <div class="project-tech">
-          <span class="tech-pill">Java</span>
-          <span class="tech-pill">PHP</span>
-          <span class="tech-pill">TypeScript</span>
-          <span class="tech-pill">WebSockets</span>
-          <span class="tech-pill">REST</span>
-        </div>
-
-        <footer class="project-footer">
-          <a routerLink="/castores" class="btn-link">Ver más</a>
-        </footer>
-      </article>
-
-      <!-- PROYECTO 5 -->
-      <article class="project-card">
-        <header class="project-top">
-          <div>
-            <h3 class="project-title">Escáner NFC para control de accesos</h3>
-            <p class="project-meta">Club León · Operación en estadio</p>
-          </div>
-          <span class="project-badge">Herramienta interna</span>
-        </header>
-
-        <p class="project-description">
-          Sistema de lectura NFC para validar credenciales en tiempo real. Permite escanear tarjetas,
-          consultar información del titular y registrar entradas/salidas con trazabilidad.
-        </p>
-
-        <div class="project-tech">
-          <span class="tech-pill">Node.js</span>
-          <span class="tech-pill">nfc-pcsc</span>
-          <span class="tech-pill">WebSocket</span>
-          <span class="tech-pill">Angular</span>
-        </div>
-
-        <footer class="project-footer">
-          <a routerLink="/nfc" class="btn-link">Ver más</a>
-        </footer>
-      </article>
-
-      <!-- PROYECTO 6 -->
-      <article class="project-card">
-        <header class="project-top">
-          <div>
-            <h3 class="project-title">MEMOBIT: Juego de Memoria</h3>
-            <p class="project-meta">iOS · Android · Proyecto personal</p>
-          </div>
-          <span class="project-badge">Mobile</span>
-        </header>
-
-        <p class="project-description">
-          Juego móvil tipo memorama con categorías, niveles progresivos y retos cronometrados.
-          Diseñado para entrenar memoria visual con una experiencia colorida y accesible.
-        </p>
-
-        <div class="project-tech">
-          <span class="tech-pill">Flutter</span>
-          <span class="tech-pill">Dart</span>
-          <span class="tech-pill">Firebase</span>
-          <span class="tech-pill">AdMob</span>
-          <span class="tech-pill">IAP</span>
-        </div>
-
-        <footer class="project-footer">
-          <a routerLink="/memobit" class="btn-link">Ver más</a>
-        </footer>
-      </article>
-
-      <!-- PROYECTO 7 -->
-      <article class="project-card">
-        <header class="project-top">
-          <div>
-            <h3 class="project-title">FrontClub — App Club León</h3>
-            <p class="project-meta">Club León · Aplicación móvil (Frontend)</p>
-          </div>
-          <span class="project-badge">Mobile</span>
-        </header>
-
-        <p class="project-description">
-          FrontClub es la aplicación móvil oficial para aficionados del Club León: noticias,
-          reels, galería, beneficios para socios y notificaciones push. Cliente móvil construido
-          en Flutter con enfoque en rendimiento durante eventos de alta concurrencia.
-        </p>
-
-        <div class="project-tech">
-          <span class="tech-pill">Flutter</span>
-          <span class="tech-pill">Dart</span>
-          <span class="tech-pill">Provider</span>
-          <span class="tech-pill">Dio</span>
-          <span class="tech-pill">Firebase</span>
-        </div>
-
-        <footer class="project-footer">
-          <a routerLink="/app-club-leon" class="btn-link">Ver más</a>
-        </footer>
-      </article>
-
-      <!-- PROYECTO 8 -->
-      <article class="project-card">
-        <header class="project-top">
-          <div>
-            <h3 class="project-title">TiendaFrontCL — Tienda online</h3>
-            <p class="project-meta">Club León · Tienda online</p>
-          </div>
-          <span class="project-badge">Aplicación web</span>
-        </header>
-
-        <p class="project-description">
-          Plataforma frontend mobile-first conectada al backend de la tienda: catálogo, carrito
-          persistente (x-session-id), checkout con Stripe y panel admin protegido por roles.
-        </p>
-
-        <div class="project-tech">
-          <span class="tech-pill">Next.js</span>
-          <span class="tech-pill">TypeScript</span>
-          <span class="tech-pill">Tailwind</span>
-          <span class="tech-pill">Firebase</span>
-          <span class="tech-pill">Stripe</span>
-        </div>
-
-        <footer class="project-footer">
-          <a routerLink="/tienda-front-cl" class="btn-link">Ver más</a>
-        </footer>
-      </article>
+        </article>
+      } @empty {
+        <p class="empty">No hay proyectos en este filtro.</p>
+      }
     </div>
   </div>
 </section>

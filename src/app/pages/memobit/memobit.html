@@ -223,39 +223,10 @@
         </div>
       </section>
     </section>
-
-    <!-- GALERÍA (MÓVIL) -->
-    <section class="project-gallery project-gallery-mobile">
-      <h2>Galería</h2>
-      <p class="gallery-hint">
-        Capturas reales de MEMOBIT en iOS y Android: portada de tienda, pantalla de inicio,
-        selección de categoría, tablero de juego y pantalla de resultados.
-      </p>
-
-      <div class="gallery-layout-mobile">
-        <!-- “CELULAR” PRINCIPAL -->
-        <div class="phone-frame">
-          <img
-            [src]="activeImage.src"
-            [alt]="activeImage.alt"
-            class="phone-img"
-          />
-        </div>
-
-        <!-- MINIATURAS EN FORMATO CELULAR -->
-        <div class="phone-thumbs">
-          <ng-container *ngFor="let img of galleryImages; let i = index">
-            <button
-              *ngIf="i !== activeIndex"
-              type="button"
-              class="phone-thumb"
-              (click)="setActive(i)"
-            >
-              <img [src]="img.src" [alt]="img.alt" />
-            </button>
-          </ng-container>
-        </div>
-      </div>
-    </section>
+    <app-project-gallery
+      [images]="galleryImages"
+      mode="phone"
+      hint="Capturas reales de MEMOBIT en iOS y Android: portada de tienda, pantalla de inicio, selección de categoría, tablero de juego y pantalla de resultados."
+    />
   </div>
 </section>

@@ -225,37 +225,9 @@
     </section>
 
     <!-- GALERÍA -->
-    <section class="project-gallery">
-      <h2>Galería</h2>
-      <p class="gallery-hint">
-        Capturas de módulos como Renovaciones, Control de citas y reportes de cortes diarios, que
-        ilustran el flujo completo del sistema.
-      </p>
-
-      <div class="gallery-layout">
-        <!-- IMAGEN PRINCIPAL -->
-        <div class="gallery-main">
-          <img
-            [src]="activeImage.src"
-            [alt]="activeImage.alt"
-            class="gallery-main-img"
-          />
-        </div>
-
-        <!-- MINIATURAS -->
-        <div class="gallery-thumbs">
-          <ng-container *ngFor="let img of galleryImages; let i = index">
-            <button
-              *ngIf="i !== activeIndex"
-              type="button"
-              class="gallery-thumb"
-              (click)="setActive(i)"
-            >
-              <img [src]="img.src" [alt]="img.alt" />
-            </button>
-          </ng-container>
-        </div>
-      </div>
-    </section>
+    <app-project-gallery
+      [images]="galleryImages"
+      hint="Capturas de módulos como Renovaciones, Control de citas y reportes de cortes diarios, que ilustran el flujo completo del sistema."
+    />
   </div>
 </section>

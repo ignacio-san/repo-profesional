@@ -1,67 +1,170 @@
-<section class="section section-hero">
-  <div class="container hero-grid">
-    <div class="hero-main">
-      <p class="hero-eyebrow">Ingeniero de Software · Full Stack</p>
-
-      <h1 class="hero-title">
-        Transformo operaciones complejas en
-        <span class="hero-highlight">soluciones digitales escalables</span>.
+<section
+  class="hero"
+  [style.--mx.%]="pointerX"
+  [style.--my.%]="pointerY"
+>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container hero-layout">
+    <div class="hero-copy rise">
+      <p class="hero-kicker">Ingeniero de Software · Full Stack</p>
+      <h1 class="hero-brand">
+        Ignacio
+        <span>Sánchez Sánchez</span>
       </h1>
-
-      <p class="hero-subtitle">
-        Desarrollo soluciones digitales orientadas a operación real, combinando arquitectura clara,
-        tecnologías modernas y enfoque en estabilidad, escalabilidad y mantenibilidad.
+      <p class="hero-line">
+        Sistemas digitales estables para operación real:
+        estadios, logística y producto.
       </p>
-
-      <div class="hero-actions">
-        <a href="assets/Ignacio_Cv.pdf" class="btn btn-primary" target="_blank" rel="noopener">
-          Descargar CV
-        </a>
-
-        <a routerLink="/proyectos" class="btn btn-ghost">
-          Ver proyectos
-        </a>
-      </div>
-
-      <div class="hero-tech">
-        <span class="tech-pill">Angular</span>
-        <span class="tech-pill">Flutter</span>
-        <span class="tech-pill">Java</span>
-        <span class="tech-pill">Dart</span>
-        <span class="tech-pill">JavaScript</span>
-        <span class="tech-pill">TypeScript</span>
-        <span class="tech-pill">Firebase</span>
-        <span class="tech-pill">Odoo</span>
-        <span class="tech-pill">Python</span>
-        <span class="tech-pill">MySQL</span>
-        <span class="tech-pill">Spring Boot</span>
-        <span class="tech-pill">Node</span>
-        <span class="tech-pill">NFC</span>
-        <span class="tech-pill">IoT</span>
+      <div class="hero-actions rise rise-delay-1">
+        <a routerLink="/proyectos" class="btn btn-primary">Ver proyectos</a>
+        <a routerLink="/contacto" class="btn btn-ghost">Contactar</a>
       </div>
     </div>
+  </div>
+</section>
 
-    <aside class="hero-aside">
-      <div class="hero-card">
-        <div class="hero-card-top">
-          <h2 class="hero-card-title">¿Por qué trabajar conmigo?</h2>
-          <p class="hero-card-subtitle">Valor y forma de trabajo</p>
-        </div>
+<section class="section work-section">
+  <div class="container">
+    <header class="section-header rise">
+      <p class="section-kicker">02 — Trabajo</p>
+      <h2 class="section-title">Casos en producción</h2>
+      <p class="section-subtitle">
+        Problema, decisión y resultado. Selecciona un caso para ver el detalle.
+      </p>
+    </header>
 
-        <p class="hero-card-text">
-          Aporto una combinación equilibrada entre visión técnica y entendimiento del negocio.
-          Me involucro en el análisis de procesos para proponer soluciones prácticas, estables y
-          alineadas a la operación real.
-        </p>
+    <div class="filters rise rise-delay-1" role="tablist" aria-label="Filtrar por dominio">
+      @for (domain of domains; track domain.id) {
+        <button
+          type="button"
+          class="filter"
+          role="tab"
+          [class.active]="activeDomain === domain.id"
+          [attr.aria-selected]="activeDomain === domain.id"
+          (click)="setDomain(domain.id)"
+        >
+          {{ domain.label }}
+        </button>
+      }
+    </div>
 
-        <ul class="check-list">
-          <li>Enfoque claro en solución de problemas reales.</li>
-          <li>Participación en todo el ciclo de desarrollo.</li>
-          <li>Arquitecturas limpias y fáciles de mantener.</li>
-          <li>Comunicación efectiva con equipos técnicos y de negocio.</li>
-          <li>Compromiso con la calidad y la mejora continua.</li>
-        </ul>
+    <div class="work-stage rise rise-delay-2">
+      <div class="work-index" role="list">
+        @for (project of filteredProjects; track project.id) {
+          <button
+            type="button"
+            class="work-row"
+            role="listitem"
+            [class.active]="activeProject.id === project.id"
+            (mouseenter)="selectProject(project.id)"
+            (focus)="selectProject(project.id)"
+            (click)="selectProject(project.id)"
+          >
+            <span class="work-num">{{ project.index }}</span>
+            <span class="work-meta">
+              <span class="work-title">{{ project.title }}</span>
+              <span class="work-client">{{ project.client }}</span>
+            </span>
+          </button>
+        }
       </div>
-    </aside>
+
+      @for (project of [activeProject]; track project.id) {
+        <article class="work-detail">
+          <div class="detail-top">
+            <span class="detail-domain">{{ domainLabel(project.domain) }}</span>
+            <span class="detail-index">{{ project.index }}</span>
+          </div>
+
+          <p class="detail-client">{{ project.client }}</p>
+          <h3>{{ project.title }}</h3>
+
+          <div class="detail-grid">
+            <div class="detail-block">
+              <span class="detail-label">Problema</span>
+              <p>{{ project.problem }}</p>
+            </div>
+            <div class="detail-block detail-block-result">
+              <span class="detail-label">Resultado</span>
+              <p>{{ project.result }}</p>
+            </div>
+          </div>
+
+          <div class="detail-footer">
+            <div class="detail-stack">
+              @for (tech of project.stack; track tech) {
+                <span class="chip">{{ tech }}</span>
+              }
+            </div>
+            <a [routerLink]="project.route" class="btn-link">Ver caso completo</a>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="work-more">
+      <a routerLink="/proyectos" class="btn btn-ghost">Ver todos los proyectos</a>
+    </div>
+  </div>
+</section>
+
+<section class="section approach-section">
+  <div class="container approach-grid">
+    <div class="rise">
+      <p class="section-kicker">03 — Enfoque</p>
+      <h2 class="section-title">Primero el proceso. Después el código.</h2>
+    </div>
+    <div class="approach-copy rise rise-delay-1">
+      <p>
+        Analizo la operación antes de proponer arquitectura. Busco sistemas
+        claros, mantenibles y alineados al día a día — no demos frágiles.
+      </p>
+      <p>
+        He entregado plataformas internas, apps móviles y productos de usuario
+        final en consultoría, logística y gestión deportiva.
+      </p>
+      <a routerLink="/sobre-mi" class="btn-link">Ver trayectoria</a>
+    </div>
+  </div>
+</section>
+
+<section class="section stack-section">
+  <div class="container">
+    <header class="section-header rise">
+      <p class="section-kicker">04 — Stack</p>
+      <h2 class="section-title">Tecnologías en producción</h2>
+      <p class="section-subtitle">
+        Herramientas que uso cuando el sistema tiene que aguantar uso real.
+      </p>
+    </header>
+
+    <div class="stack-grid">
+      @for (group of stackGroups; track group.title; let i = $index) {
+        <article class="stack-card rise" [class]="'rise-delay-' + ((i % 4) + 1)">
+          <h3>{{ group.title }}</h3>
+          <div class="stack-items">
+            @for (item of group.items; track item) {
+              <span class="stack-item" tabindex="0">{{ item }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner rise">
+    <div>
+      <p class="section-kicker">05 — Contacto</p>
+      <h2 class="section-title">¿Necesitas construir o estabilizar un sistema?</h2>
+      <p class="section-subtitle">
+        Cuéntame el contexto y el objetivo. Respondo el mismo día o al siguiente hábil.
+      </p>
+    </div>
+    <div class="cta-actions">
+      <a routerLink="/contacto" class="btn btn-primary">Escribir</a>
+      <a href="assets/Ignacio_Cv.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Descargar CV</a>
+    </div>
   </div>
 </section>

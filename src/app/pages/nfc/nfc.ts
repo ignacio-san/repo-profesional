@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ProjectGallery } from '../../components/project-gallery/project-gallery';
 
 @Component({
   selector: 'app-nfc',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ProjectGallery],
   templateUrl: './nfc.html',
   styleUrls: ['./nfc.css'],
 })
@@ -33,14 +34,4 @@ export class Nfc {
       alt: 'Bitácora e historial de accesos con filtros por fecha',
     },
   ];
-
-  activeIndex = 0;
-
-  get activeImage() {
-    return this.galleryImages[this.activeIndex];
-  }
-
-  setActive(index: number) {
-    this.activeIndex = index;
-  }
 }

@@ -2,11 +2,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ProjectGallery } from '../../components/project-gallery/project-gallery';
 
 @Component({
   selector: 'app-acreditaciones',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ProjectGallery],
   templateUrl: './acreditaciones.html',
   styleUrls: ['./acreditaciones.css'], // puedes copiar aquí el CSS de plateas
 })
@@ -33,14 +34,4 @@ export class Acreditaciones {
       alt: 'Tabla de postulados por partido con acciones de aprobar o rechazar',
     },
   ];
-
-  activeIndex = 0;
-
-  get activeImage() {
-    return this.galleryImages[this.activeIndex];
-  }
-
-  setActive(index: number) {
-    this.activeIndex = index;
-  }
 }

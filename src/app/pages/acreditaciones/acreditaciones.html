@@ -231,39 +231,10 @@
         </div>
       </section>
     </section>
-
-    <!-- GALERÍA -->
-    <section class="project-gallery">
-      <h2>Galería</h2>
-      <p class="gallery-hint">
-        Pantallas de login, panel de administrador, perfil del acreditado y vistas de historial,
-        así como ejemplo del correo enviado con la acreditación en PDF.
-      </p>
-
-      <div class="gallery-layout">
-        <!-- IMAGEN PRINCIPAL -->
-        <div class="gallery-main">
-          <img
-            [src]="activeImage.src"
-            [alt]="activeImage.alt"
-            class="gallery-main-img"
-          />
-        </div>
-
-        <!-- MINIATURAS -->
-        <div class="gallery-thumbs">
-          <ng-container *ngFor="let img of galleryImages; let i = index">
-            <button
-              *ngIf="i !== activeIndex"
-              type="button"
-              class="gallery-thumb"
-              (click)="setActive(i)"
-            >
-              <img [src]="img.src" [alt]="img.alt" />
-            </button>
-          </ng-container>
-        </div>
-      </div>
-    </section>
+    <app-project-gallery
+      [images]="galleryImages"
+      mode="desktop"
+      hint="Capturas del flujo de acreditaciones: login, jornadas, perfil, estatus y postulados."
+    />
   </div>
 </section>

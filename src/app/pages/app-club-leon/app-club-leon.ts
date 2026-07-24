@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ProjectGallery } from '../../components/project-gallery/project-gallery';
 
 @Component({
   selector: 'app-app-club-leon',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ProjectGallery],
   templateUrl: './app-club-leon.html',
   styleUrls: ['./app-club-leon.css'],
 })
@@ -17,14 +18,4 @@ export class AppClubLeon {
     { src: encodeURI('assets/app-club-leon/APP 4.jpg'), alt: 'Galería y visor de imágenes' },
     { src: encodeURI('assets/app-club-leon/APP 5.jpg'), alt: 'Sección de beneficios para socios' },
   ];
-
-  activeIndex = 0;
-
-  get activeImage() {
-    return this.galleryImages[this.activeIndex];
-  }
-
-  setActive(index: number) {
-    this.activeIndex = index;
-  }
 }

@@ -2,10 +2,10 @@
   <div class="container project-detail">
     <header class="project-detail-header">
       <a routerLink="/proyectos" class="back-link">Volver a proyectos</a>
-      <h1 class="project-detail-title">Sistema de Tienda — TiendaFrontCL</h1>
+      <h1 class="project-detail-title">Tienda Oficial Club León</h1>
 
       <div class="project-meta-strip">
-        <span class="project-meta-tag">TiendaFrontCL · Frontend + Integración Backend</span>
+        <span class="project-meta-tag">Club León · Frontend + Integración Backend</span>
         <span class="project-meta-tag">Autor: Ignacio Sánchez</span>
         <span class="project-meta-tag">Versión: v1.0.0</span>
       </div>
@@ -89,6 +89,17 @@
             <span class="project-card-tag">Pagos</span>
             <span class="project-card-tag">Admin</span>
           </div>
+
+          <div class="project-live-links">
+            <a
+              class="btn-link"
+              href="https://tiendalaguarida.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Abrir tienda en vivo
+            </a>
+          </div>
         </div>
       </aside>
     </div>
@@ -146,25 +157,11 @@
         </div>
       </section>
     </section>
-
-    <section class="project-gallery">
-      <h2>Galería</h2>
-      <p class="gallery-hint">Capturas sugeridas: listado de productos, detalle de producto, carrito y flujo de checkout.</p>
-
-      <div class="gallery-layout">
-        <div class="gallery-main">
-          <img [src]="galleryImages[activeIndex].src" [alt]="galleryImages[activeIndex].alt" class="gallery-main-img" />
-        </div>
-
-        <div class="gallery-thumbs">
-          <ng-container *ngFor="let img of galleryImages; let i = index">
-            <button *ngIf="i !== activeIndex" type="button" class="gallery-thumb" (click)="setActive(i)">
-              <img [src]="img.src" [alt]="img.alt" />
-            </button>
-          </ng-container>
-        </div>
-      </div>
-    </section>
+    <app-project-gallery
+      [images]="galleryImages"
+      mode="desktop"
+      hint="Capturas sugeridas: listado de productos, detalle de producto, carrito y flujo de checkout."
+    />
   </div>
 </section>
 

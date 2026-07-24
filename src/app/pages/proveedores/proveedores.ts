@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ProjectGallery } from '../../components/project-gallery/project-gallery';
 
 @Component({
   selector: 'app-proveedores',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ProjectGallery],
   templateUrl: './proveedores.html',
   styleUrls: ['./proveedores.css'],
 })
@@ -32,14 +33,4 @@ export class Proveedores {
       alt: 'Vista de carga de opinión de cumplimiento y constancia fiscal',
     },
   ];
-
-  activeIndex = 0;
-
-  get activeImage() {
-    return this.galleryImages[this.activeIndex];
-  }
-
-  setActive(index: number) {
-    this.activeIndex = index;
-  }
 }

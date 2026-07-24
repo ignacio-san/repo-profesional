@@ -1,0 +1,129 @@
+<section class="pg" [class.pg-phone]="mode === 'phone'" [attr.data-mode]="mode">
+  <header class="pg-head">
+    <div>
+      <h2>{{ title }}</h2>
+      @if (hint) {
+        <p class="pg-hint">{{ hint }}</p>
+      }
+    </div>
+    <div class="pg-meta" aria-live="polite">{{ counter }}</div>
+  </header>
+
+  @if (activeImage) {
+    @if (mode === 'desktop') {
+      <div class="pg-layout">
+        <div
+          class="pg-stage"
+          (touchstart)="onTouchStart($event)"
+          (touchend)="onTouchEnd($event)"
+        >
+          <button
+            type="button"
+            class="pg-main"
+            (click)="openLightbox()"
+            [attr.aria-label]="'Ampliar: ' + activeImage.alt"
+          >
+            <img
+              [src]="activeImage.src"
+              [alt]="activeImage.alt"
+              class="pg-main-img"
+            />
+            <span class="pg-expand">Ampliar</span>
+          </button>
+
+          <button type="button" class="pg-nav pg-prev" (click)="prev($event)" aria-label="Anterior">
+            ‹
+          </button>
+          <button type="button" class="pg-nav pg-next" (click)="next($event)" aria-label="Siguiente">
+            ›
+          </button>
+        </div>
+
+        <div class="pg-thumbs" role="list">
+          @for (img of images; track img.src; let i = $index) {
+            <button
+              type="button"
+              class="pg-thumb"
+              role="listitem"
+              [class.active]="i === activeIndex"
+              [attr.aria-current]="i === activeIndex"
+              [attr.aria-label]="img.alt"
+              (click)="setActive(i)"
+              (keydown)="onThumbKeydown($event, i)"
+            >
+              <img [src]="img.src" [alt]="img.alt" />
+            </button>
+          }
+        </div>
+      </div>
+    } @else {
+      <div
+        class="pg-phone-layout"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)"
+      >
+        <div class="pg-phone-stage">
+          <button
+            type="button"
+            class="phone-frame"
+            (click)="openLightbox()"
+            [attr.aria-label]="'Ampliar: ' + activeImage.alt"
+          >
+            <span class="phone-notch" aria-hidden="true"></span>
+            <img [src]="activeImage.src" [alt]="activeImage.alt" class="phone-img" />
+          </button>
+
+          <button type="button" class="pg-nav pg-prev" (click)="prev($event)" aria-label="Anterior">
+            ‹
+          </button>
+          <button type="button" class="pg-nav pg-next" (click)="next($event)" aria-label="Siguiente">
+            ›
+          </button>
+        </div>
+
+        <div class="phone-thumbs" role="list">
+          @for (img of images; track img.src; let i = $index) {
+            <button
+              type="button"
+              class="phone-thumb"
+              role="listitem"
+              [class.active]="i === activeIndex"
+              [attr.aria-current]="i === activeIndex"
+              [attr.aria-label]="img.alt"
+              (click)="setActive(i)"
+            >
+              <img [src]="img.src" [alt]="img.alt" />
+            </button>
+          }
+        </div>
+      </div>
+    }
+  }
+
+  @if (lightboxOpen && activeImage) {
+    <div
+      class="pg-lightbox"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="activeImage.alt"
+      (click)="closeLightbox()"
+    >
+      <button type="button" class="pg-lightbox-close" (click)="closeLightbox()" aria-label="Cerrar">
+        ×
+      </button>
+      <button type="button" class="pg-nav pg-prev" (click)="prev($event)" aria-label="Anterior">
+        ‹
+      </button>
+      <img
+        [src]="activeImage.src"
+        [alt]="activeImage.alt"
+        class="pg-lightbox-img"
+        (click)="$event.stopPropagation()"
+      />
+      <button type="button" class="pg-nav pg-next" (click)="next($event)" aria-label="Siguiente">
+        ›
+      </button>
+      <p class="pg-lightbox-caption">{{ activeImage.alt }} · {{ counter }}</p>
+    </div>
+  }
+</section>

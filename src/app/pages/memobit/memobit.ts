@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ProjectGallery } from '../../components/project-gallery/project-gallery';
 
 @Component({
   selector: 'app-memobit',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ProjectGallery],
   templateUrl: './memobit.html',
   styleUrls: ['./memobit.css'],
 })
@@ -32,14 +33,4 @@ export class Memobit {
       alt: 'Pantalla de resultados con estrellas y estadísticas de tiempo e intentos',
     },
   ];
-
-  activeIndex = 0;
-
-  get activeImage() {
-    return this.galleryImages[this.activeIndex];
-  }
-
-  setActive(index: number) {
-    this.activeIndex = index;
-  }
 }

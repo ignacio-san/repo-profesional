@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 type SkillTab = 'frontend' | 'backend' | 'mobile' | 'db' | 'methods';
 
@@ -11,15 +11,20 @@ type SkillTab = 'frontend' | 'backend' | 'mobile' | 'db' | 'methods';
   styleUrls: ['./sobre-mi.css'],
 })
 export class SobreMi {
-  // Tabs de habilidades
   activeSkillTab: SkillTab = 'frontend';
+  openIndex: number | null = 0;
+
+  readonly skillTabs: { id: SkillTab; label: string }[] = [
+    { id: 'frontend', label: 'Frontend' },
+    { id: 'backend', label: 'Backend' },
+    { id: 'mobile', label: 'Mobile' },
+    { id: 'db', label: 'Datos' },
+    { id: 'methods', label: 'Método' },
+  ];
 
   setSkillTab(tab: SkillTab) {
     this.activeSkillTab = tab;
   }
-
-  // Acordeón de experiencias
-  private openIndex: number | null = 2; // por default abre Club León (puedes cambiarlo)
 
   toggle(index: number) {
     this.openIndex = this.openIndex === index ? null : index;
