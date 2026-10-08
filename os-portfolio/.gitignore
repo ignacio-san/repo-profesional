@@ -1,0 +1,11 @@
+node_modules
+.next
+tsconfig.tsbuildinfo
+.DS_Store
+
+# Proyectos que ya no se muestran en el portafolio
+public/media/acreditaciones
+public/media/castores
+public/media/nfc
+public/media/plateas
+public/media/proveedores
