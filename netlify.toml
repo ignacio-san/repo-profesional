@@ -1,7 +1,6 @@
 [build]
-  base = "os-portfolio"
   command = "npm run build"
-  publish = ".next"
+  publish = "os-portfolio/.next"
 
 [build.environment]
   NODE_VERSION = "22"
