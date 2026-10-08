@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm --prefix os-portfolio ci && npm --prefix os-portfolio run build",
+    "build": "npm --prefix os-portfolio ci && npm --prefix os-portfolio run build && rm -rf dist/portafolio-ignacio && mkdir -p dist/portafolio-ignacio && cp -R os-portfolio/out dist/portafolio-ignacio/browser",
     "build:angular": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
